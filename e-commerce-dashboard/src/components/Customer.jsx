@@ -21,7 +21,9 @@ import { visuallyHidden } from '@mui/utils';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-
+import Narbar from './Navbar';
+import { Container } from '@mui/material';
+import Topbar from './Topbar';
 
 
 function createData(id, name, email, join_date, perchase_amoung) {
@@ -340,6 +342,12 @@ export default function Customer() {
   );
 
   return (
+    <>
+    <Topbar/>
+    <Box height={30}>
+    <Box sx={{ display: 'flex' }}>
+    <Narbar/>
+    <Container component="main" sx={{ flexGrow: 1, paddingTop: 16}}>
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -419,5 +427,9 @@ export default function Customer() {
         />
       </Paper>
     </Box>
+    </Container>
+    </Box>
+    </Box>
+    </>
   );
 }
