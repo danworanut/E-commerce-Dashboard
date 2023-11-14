@@ -183,7 +183,7 @@ export default function Topbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Dashboard 
           </Typography>
           <Search>
             <SearchIconWrapper>

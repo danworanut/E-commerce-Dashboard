@@ -4,6 +4,16 @@ import Topbar from './Topbar';
 import Box from '@mui/material/Box';
 import { Container, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import {  createTheme, ThemeProvider } from '@mui/material/styles';
+
+import '@fontsource/poppins'; 
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Poppins, sans-serif',
+  },
+});
 
 const initialInventory = [
   { id: 1, name: 'Products A', category: 'category A', quantity: 10, status: 'In Stock' },
@@ -34,6 +44,7 @@ export default function Inventory() {
 
   return (
     <>
+    <ThemeProvider theme={theme}>
       <Topbar />
       <Box height={30}>
         <Box sx={{ display: 'flex' }}>
@@ -84,6 +95,7 @@ export default function Inventory() {
           </Container>
         </Box>
       </Box>
+      </ThemeProvider>
     </>
   );
 }

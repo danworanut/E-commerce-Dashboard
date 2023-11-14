@@ -5,19 +5,21 @@ import Inventory from "./components/Inventory";
 import SalesReport from "./components/SalesReport";
 
 
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route  >
-          <Route path="/" exact element={<Overview/>}  />
     
-          <Route path="/customer" exact element={<Customer/>}  />
-          <Route path="/inventory" exact element={<Inventory/>}  />
-          <Route path="/salesreport" exact element={<SalesReport/>}  />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route  >
+            <Route path="/" exact element={<Overview />} />
+
+            <Route path="/customer" exact element={<Customer />} />
+            <Route path="/inventory" exact element={<Inventory />} />
+            <Route path="/salesreport" exact element={<SalesReport />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 

@@ -24,6 +24,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import Narbar from './Navbar';
 import { Container } from '@mui/material';
 import Topbar from './Topbar';
+import {  createTheme, ThemeProvider } from '@mui/material/styles';
+
+import '@fontsource/poppins'; 
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Poppins, sans-serif',
+  },
+});
 
 
 function createData(id, name, email, join_date, perchase_amoung) {
@@ -233,7 +243,7 @@ function EnhancedTableToolbar(props) {
           component="div"
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          <span style={{ flex: 1 }}>Cumtomer</span>
+       
            <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -343,11 +353,14 @@ export default function Customer() {
 
   return (
     <>
+       <ThemeProvider theme={theme}>
     <Topbar/>
     <Box height={30}>
     <Box sx={{ display: 'flex' }}>
     <Narbar/>
+    
     <Container component="main" sx={{ flexGrow: 1, paddingTop: 16}}>
+    <h1>Cumtomer</h1>
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -430,6 +443,7 @@ export default function Customer() {
     </Container>
     </Box>
     </Box>
+    </ThemeProvider>
     </>
   );
 }
